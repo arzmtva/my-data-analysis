@@ -1,0 +1,51 @@
+# Practical Work 4 — Linear Regression and Feature Selection
+
+## Objective
+The objective of this practical work is to build a Linear Regression model, evaluate its performance, analyze multicollinearity, and compare a base model with a reduced model using fewer features.
+
+## Dataset
+- **Dataset:** California Housing Dataset
+- **Source:** `sklearn.datasets.fetch_california_housing`
+- **Number of samples:** 20,640
+- **Initial number of features:** 8
+- **Target variable:** `MedHouseVal`
+
+## Tasks Completed
+1. Loaded and explored the dataset.
+2. Checked for missing values.
+3. Split the data into training and testing sets.
+4. Trained a base Linear Regression model using 8 features.
+5. Evaluated the model using MAE, MSE, RMSE, and R².
+6. Created a correlation matrix to examine relationships between features.
+7. Calculated Variance Inflation Factor (VIF) to analyze multicollinearity.
+8. Removed the `AveBedrms` feature to create a reduced model with 7 features.
+9. Compared the performance of the base and reduced models.
+10. Plotted the residuals and compared actual and predicted values.
+
+## Results
+
+### Base Model
+- Number of features: 8
+- MAE: 0.5332
+- MSE: 0.5559
+- RMSE: 0.7456
+- R²: 0.5758
+
+### Reduced Model
+- Number of features: 7
+- MAE: 0.5425
+- MSE: 0.5473
+- RMSE: 0.7398
+- R²: 0.5823
+
+## Comparison and Analysis
+The reduced model uses one fewer feature than the base model. Its RMSE decreased from 0.7456 to 0.7398, and its R² increased from 0.5758 to 0.5823. However, MAE increased slightly from 0.5332 to 0.5425.
+
+The results show that the reduced model maintains similar predictive performance while using fewer features.
+
+## Conclusion
+In this practical work, I trained and evaluated two Linear Regression models using the California Housing Dataset. I analyzed multicollinearity using a correlation matrix and VIF, removed one feature, and compared the model metrics.
+
+The reduced model achieved a slightly better RMSE and R², although its MAE was slightly higher. Overall, the reduced model provides comparable performance with fewer features.
+
+**Tools:** Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Statsmodels.
