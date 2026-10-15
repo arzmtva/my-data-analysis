@@ -1,0 +1,90 @@
+# Practical Work 7 — Random Forest
+
+## Overview
+
+This practical work focuses on tuning a Random Forest model, analyzing feature importance, and testing whether removing the least important features affects model performance.
+
+## Objective
+
+- Tune the main Random Forest hyperparameters.
+- Compare the tuned model with the default model.
+- Analyze the importance of the input features.
+- Experiment with removing the least important features.
+- Determine whether some features can be excluded without significantly reducing model quality.
+
+## Dataset
+
+**Wine Dataset** from `scikit-learn`.
+
+The dataset contains:
+- 178 samples
+- 13 input features
+- 3 target classes
+
+The dataset is loaded directly from `scikit-learn`, so a separate CSV file is not required.
+
+## Tools and Libraries
+
+- Python
+- Google Colab
+- Pandas
+- Matplotlib
+- Scikit-learn
+
+## Methodology
+
+### 1. Data Preparation
+The Wine dataset is loaded, and the target column is separated from the input features. The data is divided into training and testing sets using an 80/20 split.
+
+### 2. Baseline Model
+A Random Forest Classifier with default hyperparameters is trained. Its performance is evaluated using Accuracy.
+
+### 3. Hyperparameter Tuning
+`GridSearchCV` with 5-fold cross-validation is used to find the best combination of:
+
+- `n_estimators`: number of trees
+- `max_depth`: maximum depth of each tree
+- `min_samples_leaf`: minimum number of samples required in a leaf
+
+### 4. Model Comparison
+The tuned model is compared with the baseline model using test accuracy.
+
+### 5. Feature Importance
+The model's feature importances are calculated and visualized using a horizontal bar chart.
+
+### 6. Feature Removal Experiment
+The 20% least important features are removed. A new Random Forest model is trained using the selected best hyperparameters, and its accuracy is compared with the tuned model.
+
+## Evaluation Metric
+
+**Accuracy** measures the proportion of correctly classified samples.
+
+A higher Accuracy indicates better classification performance on the evaluated dataset.
+
+## Results
+
+Complete this table using the results printed in Google Colab.
+
+| Model | Accuracy |
+|---|---|
+| Random Forest with default parameters | Add your result |
+| Tuned Random Forest | Add your result |
+| Random Forest after feature removal | Add your result |
+
+**Removed features:** Add the feature names printed by the notebook.
+
+## Conclusion
+
+The experiment compares the performance of the default and tuned Random Forest models. Feature importance is used to identify less influential features, and a feature removal experiment evaluates their effect on model accuracy.
+
+The final conclusion should state whether removing the selected features preserves, improves, or reduces model performance, based on the experimental results.
+
+## How to Run
+
+1. Open the notebook in Google Colab.
+2. Run the code cells in order.
+3. Review the best hyperparameters and model accuracy.
+4. Examine the feature importance chart.
+5. Compare the three models and complete the Results section.
+
+No external CSV file is required because the dataset is provided by `scikit-learn`.
